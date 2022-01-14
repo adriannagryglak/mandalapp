@@ -1,0 +1,90 @@
+
+/* Josh's Custom CSS Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+* {
+    margin: 0;
+}
+
+html, body, #root {
+    height: 100%; /*percentage-based heights because on mobile 100vh doesnt mean that*/
+}
+
+body {
+    line-height: 1.5; /*according to WCAG criteria*/
+    -webkit-font-smoothing: antialiased; /*text renreing quality*/
+}
+
+h1, h2, h3{
+    line-height: 1.2;
+}
+
+/* improve media defaults */
+img, picture, video, canvas, svg {
+    /* display: block; */
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+/* MY STYLES */
+
+body {
+    background-color: #EEEDE7;
+}
+
+h2{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+/* hero section */
+
+.hero{
+    min-height: 100%;
+    border: 1px solid black;
+    padding: 30px;
+    position: relative;
+}
+
+.mode-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.mode-img{
+    max-width: 50px;
+    margin: 0 10px;
+}
+
+.mode-caption{
+    margin-left: 25%; /*so it wont moves when content is longer*/
+}
+
+/* main section */
+
+main{
+    min-height: 50%;
+    border: 1px solid black;
+    position: relative;
+}
+
+.mandala-display{
+    border: 1px solid black;
+}
+
+footer{
+    background-color: grey;
+    text-align: center;
+    color: black;
+}
