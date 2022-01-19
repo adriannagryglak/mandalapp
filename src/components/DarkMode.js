@@ -10,7 +10,7 @@ export default function DarkMode(props){
     return (
             <div className="mode-container">
                 {props.caption && <span className="mode-caption">{props.caption} {word}</span>}
-                <img className="mode-img" src={modeImg} onClick={props.onClick}/>
+                <img className="mode-img" src={modeImg} onClick={props.onClick} alt="dark/light mode toggling icon"/>
             </div>
         )
  

@@ -1,6 +1,8 @@
 import React from "react";
-import MiddlePanel from "./MiddlePanel";
+
 import DarkMode from './DarkMode';
+import MandalaControl from "./MandalaControl.js";
+import logoImg from "../images/logo.jpg";
 
 
 export default class App extends React.Component{
@@ -24,15 +26,14 @@ export default class App extends React.Component{
                               isDark={this.state.isDark} 
                               onClick={()=>{this.handleClickDarkMode()}}
                     />
-                    <img className="logo"/>  
-                    <h1>Hi its MANDALAPP</h1>
-                    <p>you here will create something beautfil in your own way</p>
+                    <img className="logo" alt="logo-img" src={logoImg}/>  
+                    <h1>together we'll create magic</h1>
+                    <p>welcome and lets create your own mandala</p>
                     <h2>let's start</h2>
                 </section>
                 <main>
                     <div className="mandala-preview"></div>
-                    <MiddlePanel />
-                    <button>add layer +</button>
+                    <MandalaControl />
                     <h2>let's show</h2>
                 </main>
                 <section className="mandala-display">

@@ -1,5 +1,5 @@
 
-/* Josh's Custom CSS Reset */
+/* custom CSS reset  https://www.joshwcomeau.com/css/custom-css-reset/ */
 *, *::before, *::after {
     box-sizing: border-box;
   }
@@ -48,6 +48,12 @@ h2{
     transform: translate(-50%, 50%);
 }
 
+a,
+a:visited,
+a:active{
+    text-decoration: none;
+}
+
 /* hero section */
 
 .hero{
@@ -55,12 +61,24 @@ h2{
     border: 1px solid black;
     padding: 30px;
     position: relative;
+    text-align: right;
 }
 
+.hero p,h1{
+    width: 50%;
+    margin: 30px 0 0 auto;
+}
+
+.logo{
+    height: 50%;
+    position: absolute;
+    transform: translateX(-160%);
+}
 .mode-container{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
+    margin-bottom: 100px;
 }
 .mode-img{
     max-width: 50px;
@@ -68,7 +86,7 @@ h2{
 }
 
 .mode-caption{
-    margin-left: 25%; /*so it wont moves when content is longer*/
+  width: 160px;
 }
 
 /* main section */
@@ -77,11 +95,48 @@ main{
     min-height: 50%;
     border: 1px solid black;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
+
+.mandala-preview{
+   background-color: grey;
+   height: 200px;
+   z-index: -1;
+}
+
+.mandala-control{
+    background-color: pink;
+    text-align: center;
+}
+
+.middle-panel{
+    margin: 10px;
+    border: 1px solid black;
+    height: 200px;
+    background-color: rosybrown;
+    
+}
+
+.mandala-control button{
+    margin: 20px;
+}
+
+/* display section*/
 
 .mandala-display{
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 30px;
 }
+
+.mandala-display .mode-container{
+    margin: 0;
+}
+
+/* footer */
 
 footer{
     background-color: grey;
