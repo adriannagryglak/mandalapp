@@ -35,11 +35,4 @@ export default function MandalaControl(props){
                 {layerComponents}
                 {layerComponents.length <6 ? <button onClick={handleClickBtn}>add layer</button> : <button>you've had enough</button>}
             </div>);
-}   
-
-
-//creates always at the beginning firts special Panel DONE
-//creates always at the end button DONE
-//button onClick creates < Panel/> component DONE 
-//removall of panel DONE
-//provides data from all panels to its child ? or its sibling? <MandalaPreview/>
+}
