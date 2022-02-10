@@ -4,12 +4,14 @@ import MandalaPreview from "./MandalaPreview";
 
 export default function MandalaControl(props){
         
-    const [layers, setLayers] = React.useState([{size: "none",
+    const [layers, setLayers] = React.useState([{
                                                  plants: "",
-                                                amount: 4},]);
-                                             
+                                                }]);
+                                                
     function addLayer(){
-        setLayers(prevLayers => [...prevLayers,{},] );
+        setLayers(prevLayers => [...prevLayers,{plants: "",
+                                                size: "none",
+                                                amount: "4"},] );
     } 
 
     function removeLayer(id){
@@ -21,6 +23,7 @@ export default function MandalaControl(props){
     }
 
     function handleFormChange(event, id){
+        
         const {name, value} = event.target;
         setLayers(prevLayers =>{
              return prevLayers.map((layer, index, prev)=>{
@@ -37,7 +40,7 @@ export default function MandalaControl(props){
                                      ) : ( <Panel id={index} 
                                                   key={index}
                                                   formData={layer} 
-                                                  onFormChange={handleFormChange}
+                                                  onFormChange={(event)=>{handleFormChange(event, index)}}
                                                   onClickRemovePanel={removeLayer}/>)      
    });
 

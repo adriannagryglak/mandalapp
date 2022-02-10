@@ -100,9 +100,10 @@ main{
 }
 
 .mandala-preview{
-   background-color: grey;
-   height: 200px;
+   background-color: white;
+   height: 400px;
    z-index: -1;
+   position: relative;
 }
 
 .mandala-control{
@@ -113,7 +114,15 @@ main{
 .middle-panel{
     margin: 10px;
     border: 1px solid black;
-    height: 200px;
+    height: 160px;
+    background-color: rosybrown;
+    
+}
+
+.layer-panel{
+    margin: 10px;
+    border: 1px solid black;
+    height: 300px;
     background-color: rosybrown;
     
 }

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import DarkMode from './DarkMode';
 import MandalaControl from "./MandalaControl.js";
 import MandalaDisplay from "./MandalaDisplay";
-import logoImg from "../images/logo.jpg";
+
 
 
 export default function App(props) {
@@ -21,7 +21,7 @@ export default function App(props) {
                     isDark={darkMode}
                     onClick={handleClickDarkMode}
                 />
-                <img className="logo" alt="logo-img" src={logoImg} />
+                {/* <img className="logo" alt="logo-img" src={logoImg} /> */}
                 <h1>together we'll create magic</h1>
                 <p>welcome and lets create your own mandala</p>
                 <h2>let's start</h2>
