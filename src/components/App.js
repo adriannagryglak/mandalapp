@@ -5,7 +5,6 @@ import MandalaControl from "./MandalaControl.js";
 import MandalaDisplay from "./MandalaDisplay";
 
 
-
 export default function App(props) {
 
     const [darkMode, setDarkMode] = useState(false);
@@ -17,13 +16,12 @@ export default function App(props) {
     return (
         <>
             <section className="hero">
-                <DarkMode caption="it cannot always be"
+                <DarkMode caption="come to the"
                     isDark={darkMode}
                     onClick={handleClickDarkMode}
                 />
-                {/* <img className="logo" alt="logo-img" src={logoImg} /> */}
-                <h1>together we'll create magic</h1>
-                <p>welcome and lets create your own mandala</p>
+                <h1>MANDALAPP</h1>
+                <p>create your own mandala</p>
                 <h2>let's start</h2>
             </section>
             <MandalaControl />

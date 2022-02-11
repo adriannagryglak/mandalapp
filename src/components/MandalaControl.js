@@ -11,7 +11,7 @@ export default function MandalaControl(props){
     function addLayer(){
         setLayers(prevLayers => [...prevLayers,{plants: "",
                                                 size: "none",
-                                                amount: "4"},] );
+                                                amount: "2"},] );
     } 
 
     function removeLayer(id){
@@ -26,8 +26,8 @@ export default function MandalaControl(props){
         
         const {name, value} = event.target;
         setLayers(prevLayers =>{
-             return prevLayers.map((layer, index, prev)=>{
-                return prev.indexOf(layer) === id ? ({...layer, [name]: value,}) : layer;
+             return prevLayers.map((layer, index)=>{
+                return index === id ? ({...layer, [name]: value,}) : layer;
             });
         });
     }
@@ -48,9 +48,9 @@ export default function MandalaControl(props){
         <main>
             <MandalaPreview layers={layers}/>
             <div className="mandala-control">
-                {layerComponents}
                 {layerComponents.length <6 ? 
-                <button onClick={addLayer}>add layer</button> : <button>you've had enough</button>}
+                    <button onClick={addLayer}>add layer</button> : <button>you've had enough</button>}
+                {layerComponents.reverse()}
             </div>
             <h2>let's show</h2>
         </main>

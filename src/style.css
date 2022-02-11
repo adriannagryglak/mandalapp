@@ -14,7 +14,7 @@ html, body, #root {
 
 body {
     line-height: 1.5; /*according to WCAG criteria*/
-    -webkit-font-smoothing: antialiased; /*text renreing quality*/
+    -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3{
@@ -23,7 +23,7 @@ h1, h2, h3{
 
 /* improve media defaults */
 img, picture, video, canvas, svg {
-    /* display: block; */
+    display: block;
     max-width: 100%;
 }
 
@@ -35,10 +35,11 @@ p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
 }
 
-/* MY STYLES */
+/* MY STYLES - global */
 
 body {
-    background-color: #EEEDE7;
+    background-color: #eeece7;
+    font-family: 'Wagon', serif;
 }
 
 h2{
@@ -54,40 +55,55 @@ a:active{
     text-decoration: none;
 }
 
+@font-face {
+    font-family: 'Aqala Display';
+    src: url(./fonts/Aqala\ Display\ Free.ttf);
+}
+
+@font-face {
+    font-family: 'Wagon';
+    src: url(./fonts/Wagon-ExtraLight.otf);
+}
 /* hero section */
 
 .hero{
     min-height: 100%;
-    border: 1px solid black;
     padding: 30px;
     position: relative;
-    text-align: right;
 }
 
 .hero p,h1{
-    width: 50%;
-    margin: 30px 0 0 auto;
+    text-align: center;
 }
 
-.logo{
-    height: 50%;
-    position: absolute;
-    transform: translateX(-160%);
+.hero h1{
+    font-size: 60px;
+    font-weight: normal;
+    font-family: 'Aqala Display', serif;
+    margin-top: 40%;
 }
+
+.hero p{
+    font-size: 24px;
+    margin-top: 10%;
+}
+
 .mode-container{
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-bottom: 100px;
 }
+
 .mode-img{
     max-width: 50px;
     margin: 0 10px;
 }
 
 .mode-caption{
-  width: 160px;
+    font-family: 'Aqala Display', serif;
+    font-weight: 200;
 }
+
 
 /* main section */
 
@@ -106,25 +122,33 @@ main{
    position: relative;
 }
 
+.layer-element{
+    transform-origin: 50% 100%;
+    position: absolute;
+    border: 1px solid green;
+    top: 50%;
+    left: 50%;
+    transform-origin: 50% 100%;
+}
+
 .mandala-control{
-    background-color: pink;
     text-align: center;
 }
 
 .middle-panel{
-    margin: 10px;
+    padding: 20px;
+    margin: 40px;
     border: 1px solid black;
     height: 160px;
-    background-color: rosybrown;
     
 }
 
 .layer-panel{
     margin: 10px;
+    padding: 20px;
     border: 1px solid black;
     height: 300px;
-    background-color: rosybrown;
-    
+    background-color: white;
 }
 
 .mandala-control button{

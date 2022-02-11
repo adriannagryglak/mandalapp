@@ -10,9 +10,8 @@ export default function Panel(props){
                 <label htmlFor="plants">choose your element</label>
                 <select id="plants" value={props.formData.plants} name="plants" onChange={props.onFormChange}>
                     <option value="">what ?</option>
-                    <option value="flower">flower</option>
+                    <option value="stone">flower</option>
                     <option value="leaf">leaf</option>
-                    <option value="cone">cone</option>
                 </select>
             </form>
         </div>);
@@ -28,12 +27,11 @@ export default function Panel(props){
                 <select id="plants" value={props.formData.plants} name="plants" onChange={props.onFormChange}>
                     <option value="">what ?</option>
                     <option value="flower">flower</option>
-                    <option value="leaf">leaf</option>
                     <option value="cone">cone</option>
                 </select>
                 <br/>
                 <label htmlFor="amount">Amount</label>
-                <input type="range" id="amount" name="amount" value={props.formData.amount} onChange={props.onFormChange} min="4" max="20" step="2"></input>
+                <input type="range" id="amount" name="amount" value={props.formData.amount} onChange={props.onFormChange} min="2" max="16" step="1"></input>
 
                 <fieldset>
                     <legend>choose a size</legend>
