@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Aqala Display';
+    src: url(./fonts/Aqala\ Display\ Free.ttf);
+}
+
+@font-face {
+    font-family: 'Wagon';
+    src: url(./fonts/Wagon-ExtraLight.otf);
+}
+
+body{
+    --light-bg-color: #fff;
+    --dark-bg-color: #121212;
+    --light-color: #eee;
+    --dark-color: #222;
+    --decor-font: 'Aqala Display';
+    --text-font: 'Wagon';
+}

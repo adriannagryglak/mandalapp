@@ -1,36 +1,40 @@
-import React from "react";
-import { mandalaData } from "../data";
+import React from 'react';
+import { mandalaData } from '../data';
 
-export default function MandalaPreview(props){
+export default function MandalaPreview(props) {
+  const mandala = props.layers.map((layer, index, prevArr) => {
+    let rad = 0;
+    for (let beforeLayer of props.layers) {
+      if (props.layers.indexOf(beforeLayer) < index) {
+        rad = rad + mandalaData.middle.sizes[beforeLayer.size];
+      }
+    }
 
-        const mandala = props.layers.map((layer, index, prev) => {
-            const elements = [];
-    
-            for(let i=0; i<layer.amount; i++){
-                let style={};
+    const elements = [];
 
-                let deg = 360/layer.amount;
-                style.transform= `rotate(${deg*i}deg)`;
+    for (let i = 0; i < layer.amount; i++) {
+      let style = {};
 
-                style.width=`${mandalaData.middle.sizes[layer.size]}`;
+      style.width = `${mandalaData.middle.sizes[layer.size]}px`;
+      style.height = `${mandalaData.middle.sizes[layer.size]}px`;
 
-                //oblicz oddalenie od srodka i zastosuj
-                // const space = czy jest srodek, jesli tak to jego 70%size i 70%size wszystkich pozostalych wartsw -30% tego el 
-                
-                let src = mandalaData.middle.plants[layer.plants];
+      let deg = 360 / layer.amount;
 
-                const el = <div className="layer-element" style={style} key={i}>
-                                <img src={src} alt=""></img>
-                           </div>;
-                elements.push(el);
-            }
+      style.transform = `rotate(${deg * i}deg) translateY(${rad + mandalaData.middle.sizes[layer.size] / 2}px)`;
 
-            return elements
-        });
+      let cls = `layer-element-${index.toString()}`; //useless unles for styling
 
-    return(
-        <div className="mandala-preview">
-            {mandala}
+      let src = mandalaData.middle.plants[layer.plants];
+
+      const el = (
+        <div className={cls} style={style} key={i}>
+          <img src={src} alt=""></img>
         </div>
-    );
+      );
+      elements.push(el);
+    }
+    return elements;
+  });
+
+  return <div className="mandala-preview">{mandala}</div>;
 }
