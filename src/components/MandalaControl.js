@@ -7,13 +7,14 @@ export default function MandalaControl(props) {
     {
       plants: '',
       size: 'none',
+      amount: 1,
     },
   ]);
 
   function addLayer() {
     setLayers((prevLayers) => [
       ...prevLayers,
-      { plants: '', size: 'small', amount: '2' },
+      { plants: 'none', size: 'small', amount: '2' },
     ]);
   }
 
@@ -27,8 +28,12 @@ export default function MandalaControl(props) {
 
   function handleFormChange(event, id) {
     const { name, value } = event.target;
+
     setLayers((prevLayers) => {
       return prevLayers.map((layer, index) => {
+        if(name === 'plants' && value === "none" && index === id){
+          layer.size = value;
+        }
         return index === id ? { ...layer, [name]: value } : layer;
       });
     });
@@ -58,17 +63,14 @@ export default function MandalaControl(props) {
   });
 
   return (
-    <main>
-      <MandalaPreview layers={layers} />
-      <div className="mandala-control">
-        {layerComponents.length < 6 ? (
-          <button onClick={addLayer}>add layer</button>
-        ) : (
-          <button>you've had enough</button>
-        )}
-        {layerComponents.reverse()}
-      </div>
-      <h2>let's show</h2>
-    </main>
+    <>
+      <main>
+        <div className="mandala-control">
+          {layerComponents}
+          {layerComponents.length < 10 && <button onClick={addLayer}>add layer</button>}
+        </div>
+        <MandalaPreview layers={layers} />
+      </main>
+    </>
   );
 }

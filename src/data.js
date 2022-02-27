@@ -8,10 +8,10 @@ export const mandalaData = {
       cone: shroom,
     },
     sizes: {
-      none: 0,
-      small: 10,
-      medium: 20,
-      big: 30,
+      none: 1,
+      small: 20,
+      medium: 40,
+      big: 60,
     },
   },
   layers: {
@@ -20,10 +20,10 @@ export const mandalaData = {
       cone: shroom,
     },
     sizes: {
-      none: 0,
-      small: 10,
-      medium: 20,
-      big: 30,
+      none: 1,
+      small: 20,
+      medium: 40,
+      big: 60,
     },
   },
 };

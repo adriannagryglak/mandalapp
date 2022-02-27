@@ -1,18 +1,60 @@
 @font-face {
-    font-family: 'Aqala Display';
-    src: url(./fonts/Aqala\ Display\ Free.ttf);
+  font-family: 'Aqala Display';
+  src: url(./fonts/Aqala\ Display\ Free.ttf);
 }
 
 @font-face {
-    font-family: 'Wagon';
-    src: url(./fonts/Wagon-ExtraLight.otf);
+  font-family: 'Wagon';
+  src: url(./fonts/Wagon-ExtraLight.otf);
 }
 
-body{
-    --light-bg-color: #fff;
-    --dark-bg-color: #121212;
-    --light-color: #eee;
-    --dark-color: #222;
-    --decor-font: 'Aqala Display';
-    --text-font: 'Wagon';
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-from-top {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-from-bottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin{
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  --light-bg-color: #fff;
+  --dark-bg-color: #121212;
+  --light-color: #eee;
+  --dark-color: #222;
+  --decor-font: 'Aqala Display', serif;
+  --text-font: 'Cinzel', serif;
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }

@@ -1,12 +1,22 @@
 import React from 'react';
+import { useRef } from 'react';
 import { mandalaData } from '../data';
+import exportAsImage from "../utils/exportAsImage";
+
 
 export default function MandalaPreview(props) {
+
+  const exportRef = useRef();
+
   const mandala = props.layers.map((layer, index, prevArr) => {
-    let rad = 0;
+
+    let radius = 0;
     for (let beforeLayer of props.layers) {
-      if (props.layers.indexOf(beforeLayer) < index) {
-        rad = rad + mandalaData.middle.sizes[beforeLayer.size];
+      if (props.layers.indexOf(beforeLayer) === 0) {
+        radius = mandalaData.layers.sizes[beforeLayer.size] / 2;
+
+      } else if (props.layers.indexOf(beforeLayer) < index) {
+        radius = radius + mandalaData.layers.sizes[beforeLayer.size];
       }
     }
 
@@ -15,16 +25,16 @@ export default function MandalaPreview(props) {
     for (let i = 0; i < layer.amount; i++) {
       let style = {};
 
-      style.width = `${mandalaData.middle.sizes[layer.size]}px`;
-      style.height = `${mandalaData.middle.sizes[layer.size]}px`;
+      style.width = `${mandalaData.layers.sizes[layer.size]}px`;
+      style.height = `${mandalaData.layers.sizes[layer.size]}px`;
 
       let deg = 360 / layer.amount;
 
-      style.transform = `rotate(${deg * i}deg) translateY(${rad + mandalaData.middle.sizes[layer.size] / 2}px)`;
+      index === 0 ? style.transform = "" : style.transform = `rotate(${deg * i}deg) translateY(${radius + mandalaData.layers.sizes[layer.size] / 2}px)`;
 
-      let cls = `layer-element-${index.toString()}`; //useless unles for styling
+      let cls = `layer-element-${index.toString()}`; //useless unles for styling later
 
-      let src = mandalaData.middle.plants[layer.plants];
+      let src = index === 0 ? mandalaData.middle.plants[layer.plants] : mandalaData.layers.plants[layer.plants];
 
       const el = (
         <div className={cls} style={style} key={i}>
@@ -36,5 +46,12 @@ export default function MandalaPreview(props) {
     return elements;
   });
 
-  return <div className="mandala-preview">{mandala}</div>;
+  return (<>
+            <div className="mandala-preview" ref={exportRef}>{mandala}</div>
+            <div className="mandala-download">
+              <div></div>
+              <h3>wanna save your art ?</h3>
+              <button onClick={() => exportAsImage(exportRef.current, "my-mandalart")}>downolad jpg file !</button>
+            </div>
+          </>);
 }
