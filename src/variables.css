@@ -3,11 +3,6 @@
   src: url(./fonts/Aqala\ Display\ Free.ttf);
 }
 
-@font-face {
-  font-family: 'Wagon';
-  src: url(./fonts/Wagon-ExtraLight.otf);
-}
-
 @keyframes appear {
   0% {
     opacity: 0;

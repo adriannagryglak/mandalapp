@@ -287,15 +287,7 @@ main {
 
 .mandala-preview div {
   position: absolute;
-  border: 1px solid green;
 }
-
-/* .mandala-preview div:last-child{
-    z-index: -1;
-}
-.mandala-preview div:first-child{
-    z-index: 10;
-} */
 
 .mandala-preview div img {
   position: absolute;
@@ -306,13 +298,9 @@ main {
   max-height: 100%;
 }
 
-/* .layer-element-1{
-transition: all 1s ease ;
+.layer-element-2:nth-child(2n){
+  z-index: -1;
 }
-
-.layer-element-1:hover ~ .layer-element-1{
-    background-color: blue;
-} */
 
 .mandala-control {
   text-align: center;

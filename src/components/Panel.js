@@ -61,8 +61,12 @@ export default function Panel(props) {
           onChange={props.onFormChange}
         >
           <option value="none">nothing</option>
-          <option value="flower">flower</option>
-          <option value="cone">cone</option>
+          <option value="moon">moon</option>
+          <option value="pine-cone">cone</option>
+          <option value="sunflower">sunflower</option>
+          <option value="wood">wood</option>
+          <option value="rose">rose</option>
+          <option value="cosmos">cosmos</option>
         </select>
         {sizesFieldset}
       </form>
@@ -84,8 +88,23 @@ export default function Panel(props) {
           onChange={props.onFormChange}
         >
           <option value="none">nothing</option>
-          <option value="flower">flower</option>
+          <option value="purple-flower">purple flower</option>
           <option value="cone">cone</option>
+          <option value="mushroom">mushroom</option>
+          <option value="funghi">funghi</option>
+          <option value="little-leaf">little leaf</option>
+          <option value="green-leaf">green leaf</option>
+          <option value="red-leaf">red leaf</option>
+          <option value="fern-leaf">fern leaf</option>
+          <option value="yellow-leaf">yellow leaf</option>
+          <option value="blue-flower">blue flower</option>
+          <option value="butterfly">butterfly</option>
+          <option value="butterfly-blue">blue butterfly</option>
+          <option value="cosmos">cosmos</option>
+          <option value="lilac">lilac</option>
+          <option value="rose">rose</option>
+          <option value="yellow-rose">yellow rose</option>
+
         </select>
         {sizesFieldset}
         <label htmlFor="amount" className='visually-hidden'>Amount</label>

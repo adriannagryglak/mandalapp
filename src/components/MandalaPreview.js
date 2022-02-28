@@ -8,15 +8,15 @@ export default function MandalaPreview(props) {
 
   const exportRef = useRef();
 
-  const mandala = props.layers.map((layer, index, prevArr) => {
+  const mandala = props.layers.map((layer, index) => {
 
     let radius = 0;
     for (let beforeLayer of props.layers) {
       if (props.layers.indexOf(beforeLayer) === 0) {
-        radius = mandalaData.layers.sizes[beforeLayer.size] / 2;
+        radius = mandalaData.sizes[beforeLayer.size] / 2;
 
       } else if (props.layers.indexOf(beforeLayer) < index) {
-        radius = radius + mandalaData.layers.sizes[beforeLayer.size];
+        radius = radius + mandalaData.sizes[beforeLayer.size];
       }
     }
 
@@ -25,12 +25,12 @@ export default function MandalaPreview(props) {
     for (let i = 0; i < layer.amount; i++) {
       let style = {};
 
-      style.width = `${mandalaData.layers.sizes[layer.size]}px`;
-      style.height = `${mandalaData.layers.sizes[layer.size]}px`;
+      style.width = `${mandalaData.sizes[layer.size]}px`;
+      style.height = `${mandalaData.sizes[layer.size]}px`;
 
       let deg = 360 / layer.amount;
 
-      index === 0 ? style.transform = "" : style.transform = `rotate(${deg * i}deg) translateY(${radius + mandalaData.layers.sizes[layer.size] / 2}px)`;
+      index === 0 ? style.transform = "" : style.transform = `rotate(${deg * i}deg) translateY(${radius + mandalaData.sizes[layer.size] / 2}px)`;
 
       let cls = `layer-element-${index.toString()}`; //useless unles for styling later
 
@@ -43,7 +43,9 @@ export default function MandalaPreview(props) {
       );
       elements.push(el);
     }
-    return elements;
+    return elements
+    // </div>;//<div className={`layer-${index.toString()}`}>
+            
   });
 
   return (<>
