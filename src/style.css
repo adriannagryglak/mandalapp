@@ -14,7 +14,7 @@
 html,
 body,
 #root {
-  height: 100%; /*percentage-based heights because on mobile 100vh doesnt mean that*/
+  height: 100%;
 }
 
 body {
@@ -28,7 +28,6 @@ h3 {
   line-height: 1.2;
 }
 
-/* improve media defaults */
 img,
 picture,
 video,
@@ -182,7 +181,7 @@ h1 {
   cursor: pointer;
 }
 
-.mode-button:hover .mode-img #extra{
+.mode-button:hover .mode-img #extra {
   opacity: 0;
 }
 
@@ -196,18 +195,18 @@ h1 {
   fill: var(--dark-bg-color);
 }
 
-.mode-img #extra{
+.mode-img #extra {
   opacity: 1;
   transform-origin: center;
   transition: all 0.5s ease;
 }
 
-.mode-img #extra.animate{
+.mode-img #extra.animate {
   opacity: 1;
   animation: 9s linear infinite spin;
 }
 
-.mode-button:hover .mode-img #extra.animate{
+.mode-button:hover .mode-img #extra.animate {
   animation-play-state: paused;
 }
 
@@ -298,7 +297,7 @@ main {
   max-height: 100%;
 }
 
-.layer-element-2:nth-child(2n){
+.layer-element-2:nth-child(2n) {
   z-index: -1;
 }
 
@@ -366,10 +365,10 @@ h3 {
 }
 
 .layer-panel input[type='range']::-webkit-slider-thumb {
-  -webkit-appearance : none;
-  background : var(--text-color);
-  height : 15px;
-  width : 15px;
+  -webkit-appearance: none;
+  background: var(--text-color);
+  height: 15px;
+  width: 15px;
   border-radius: 50%;
 }
 
@@ -444,7 +443,7 @@ h3 {
   h3 {
     font-size: 1.25rem;
   }
-  .mandala-control form select{
+  .mandala-control form select {
     font-size: 1rem;
   }
 }
@@ -466,8 +465,6 @@ h3 {
     margin: 130px 0 0 0;
   }
 }
-
-/* display section*/
 
 .mandala-download {
   flex: 0 0 100%;
@@ -494,26 +491,25 @@ footer {
   font-size: 0.64rem;
 }
 
-@media (min-width: 700px){
-  .mandala-download h3{
+@media (min-width: 700px) {
+  .mandala-download h3 {
     font-size: 2rem;
   }
 
-  footer{
+  footer {
     font-size: 0.8rem;
     opacity: 0.9;
   }
 }
 
 @media (min-width: 992px) {
-  .mandala-download{
+  .mandala-download {
     padding: 200px 0 100px 0;
   }
   .mandala-download button {
     width: 40%;
   }
-  footer{
+  footer {
     padding: 10px;
   }
-
 }

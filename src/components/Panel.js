@@ -5,48 +5,48 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 export default function Panel(props) {
 
   const sizesFieldset = (
-        <fieldset className='sizes-fieldset'>
-          <legend className='visually-hidden'>choose a size</legend>
-          <input
-            type="radio"
-            id="small"
-            onChange={props.onFormChange}
-            name="size"
-            value="small"
-            checked={props.formData.size === 'small'}
-          />
-          <svg width="200" height="373" viewBox="0 0 200 373" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M100.5 372.5C83.9168 255.201 65.3732 209.689 4 190.5C71.4656 164.728 87.7945 115.69 100 1C112.615 113.655 127.651 164.54 196.5 190.5C127.97 215.478 111.776 262.493 100.5 372.5Z" stroke="black" strokeWidth="20"/>
-          </svg>
-          <label htmlFor="small" className='visually-hidden'>Small</label>
-          
-          <input
-            type="radio"
-            id="medium"
-            onChange={props.onFormChange}
-            name="size"
-            value="medium"
-            checked={props.formData.size === 'medium'}
-          />
-          <svg width="200" height="373" viewBox="0 0 200 373" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M100.5 372.5C83.9168 255.201 65.3732 209.689 4 190.5C71.4656 164.728 87.7945 115.69 100 1C112.615 113.655 127.651 164.54 196.5 190.5C127.97 215.478 111.776 262.493 100.5 372.5Z" stroke="black" strokeWidth="20"/>
-          </svg>
-          <label htmlFor="medium" className='visually-hidden'>Medium</label>
-          
-          <input
-            type="radio"
-            id="big"
-            onChange={props.onFormChange}
-            name="size"
-            value="big"
-            checked={props.formData.size === 'big'}
-          />
-          <svg width="200" height="373" viewBox="0 0 200 373" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M100.5 372.5C83.9168 255.201 65.3732 209.689 4 190.5C71.4656 164.728 87.7945 115.69 100 1C112.615 113.655 127.651 164.54 196.5 190.5C127.97 215.478 111.776 262.493 100.5 372.5Z" stroke="black" strokeWidth="20"/>
-          </svg>
-          <label htmlFor="big" className='visually-hidden'>Big</label>
-          
-        </fieldset>
+    <fieldset className='sizes-fieldset'>
+      <legend className='visually-hidden'>choose a size</legend>
+      <input
+        type="radio"
+        id="small"
+        onChange={props.onFormChange}
+        name="size"
+        value="small"
+        checked={props.formData.size === 'small'}
+      />
+      <svg width="200" height="373" viewBox="0 0 200 373" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100.5 372.5C83.9168 255.201 65.3732 209.689 4 190.5C71.4656 164.728 87.7945 115.69 100 1C112.615 113.655 127.651 164.54 196.5 190.5C127.97 215.478 111.776 262.493 100.5 372.5Z" stroke="black" strokeWidth="20" />
+      </svg>
+      <label htmlFor="small" className='visually-hidden'>Small</label>
+
+      <input
+        type="radio"
+        id="medium"
+        onChange={props.onFormChange}
+        name="size"
+        value="medium"
+        checked={props.formData.size === 'medium'}
+      />
+      <svg width="200" height="373" viewBox="0 0 200 373" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100.5 372.5C83.9168 255.201 65.3732 209.689 4 190.5C71.4656 164.728 87.7945 115.69 100 1C112.615 113.655 127.651 164.54 196.5 190.5C127.97 215.478 111.776 262.493 100.5 372.5Z" stroke="black" strokeWidth="20" />
+      </svg>
+      <label htmlFor="medium" className='visually-hidden'>Medium</label>
+
+      <input
+        type="radio"
+        id="big"
+        onChange={props.onFormChange}
+        name="size"
+        value="big"
+        checked={props.formData.size === 'big'}
+      />
+      <svg width="200" height="373" viewBox="0 0 200 373" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100.5 372.5C83.9168 255.201 65.3732 209.689 4 190.5C71.4656 164.728 87.7945 115.69 100 1C112.615 113.655 127.651 164.54 196.5 190.5C127.97 215.478 111.776 262.493 100.5 372.5Z" stroke="black" strokeWidth="20" />
+      </svg>
+      <label htmlFor="big" className='visually-hidden'>Big</label>
+
+    </fieldset>
   );
 
   const middleForm = (
@@ -73,8 +73,8 @@ export default function Panel(props) {
     </div>
   );
 
-  const layerTitle = props.formData.plants === "none"? <h3>{numToAdjective(props.id)} layer</h3> : <h3>{numToAdjective(props.id)} layer "{props.formData.plants}"</h3>;
-  
+  const layerTitle = props.formData.plants === "none" ? <h3>{numToAdjective(props.id)} layer</h3> : <h3>{numToAdjective(props.id)} layer "{props.formData.plants}"</h3>;
+
   const layersForm = (
     <div className="layer-panel">
       {layerTitle}
@@ -144,7 +144,7 @@ function numToAdjective(n) {
   return output;
 }
 
-function idToMaxAmount(id){
-  const array= [1, 16, 32, 38, 44, 52, 58, 64, 70, 76];
+function idToMaxAmount(id) {
+  const array = [1, 16, 32, 38, 44, 52, 58, 64, 70, 76];
   return array[id];
 }

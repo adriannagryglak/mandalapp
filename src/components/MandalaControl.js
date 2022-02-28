@@ -31,7 +31,7 @@ export default function MandalaControl(props) {
 
     setLayers((prevLayers) => {
       return prevLayers.map((layer, index) => {
-        if(name === 'plants' && value === "none" && index === id){
+        if (name === 'plants' && value === "none" && index === id) {
           layer.size = value;
         }
         return index === id ? { ...layer, [name]: value } : layer;

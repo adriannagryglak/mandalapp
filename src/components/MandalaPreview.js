@@ -32,28 +32,24 @@ export default function MandalaPreview(props) {
 
       index === 0 ? style.transform = "" : style.transform = `rotate(${deg * i}deg) translateY(${radius + mandalaData.sizes[layer.size] / 2}px)`;
 
-      let cls = `layer-element-${index.toString()}`; //useless unles for styling later
-
       let src = index === 0 ? mandalaData.middle.plants[layer.plants] : mandalaData.layers.plants[layer.plants];
 
       const el = (
-        <div className={cls} style={style} key={i}>
+        <div style={style} key={i}>
           <img src={src} alt=""></img>
         </div>
       );
       elements.push(el);
     }
     return elements
-    // </div>;//<div className={`layer-${index.toString()}`}>
-            
   });
 
   return (<>
-            <div className="mandala-preview" ref={exportRef}>{mandala}</div>
-            <div className="mandala-download">
-              <div></div>
-              <h3>wanna save your art ?</h3>
-              <button onClick={() => exportAsImage(exportRef.current, "my-mandalart")}>downolad jpg file !</button>
-            </div>
-          </>);
+    <div className="mandala-preview" ref={exportRef}>{mandala}</div>
+    <div className="mandala-download">
+      <div></div>
+      <h3>wanna save your art ?</h3>
+      <button onClick={() => exportAsImage(exportRef.current, "my-mandalart")}>downolad jpg file !</button>
+    </div>
+  </>);
 }

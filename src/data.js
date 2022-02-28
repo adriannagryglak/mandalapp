@@ -53,7 +53,7 @@ export const mandalaData = {
       'yellow-leaf': yellowLeaf,
       'blue-flower': blueFlower,
       'butterfly-blue': butterflyBlue,
-      butterfly : butterfly,
+      butterfly: butterfly,
       lilac: lilac,
       cosmos: cosmos,
       rose: rose,
@@ -62,20 +62,20 @@ export const mandalaData = {
   },
 };
 
-if(window.matchMedia('(min-width: 992px)').matches){
-  mandalaData.sizes.small= 20;
-  mandalaData.sizes.medium= 40;
-  mandalaData.sizes.big= 60;
+if (window.matchMedia('(min-width: 992px)').matches) {
+  mandalaData.sizes.small = 20;
+  mandalaData.sizes.medium = 40;
+  mandalaData.sizes.big = 60;
 }
 
-window.addEventListener('resize', ()=>{
-  if(window.matchMedia('(min-width: 992px)').matches){
-    mandalaData.sizes.small= 20;
-    mandalaData.sizes.medium= 40;
-    mandalaData.sizes.big= 60;
-  }else{
-    mandalaData.sizes.small= 10;
-    mandalaData.sizes.medium= 20;
-    mandalaData.sizes.big= 30;
+window.addEventListener('resize', () => {
+  if (window.matchMedia('(min-width: 992px)').matches) {
+    mandalaData.sizes.small = 20;
+    mandalaData.sizes.medium = 40;
+    mandalaData.sizes.big = 60;
+  } else {
+    mandalaData.sizes.small = 10;
+    mandalaData.sizes.medium = 20;
+    mandalaData.sizes.big = 30;
   }
 });
