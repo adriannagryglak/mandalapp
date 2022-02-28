@@ -6,6 +6,7 @@ Mandalapp is my first React app and fun tool to design your own mandala pattern 
 ##### _please have in mind that its still work-in-progress_
 ###### _there are still few bugs to fix and many improvements to come_ 😉
 ##
+🌸 [GO TO APP](http://mandalapp.netlify.app)
 ##
 
 ## Features
