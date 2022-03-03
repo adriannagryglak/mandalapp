@@ -7,6 +7,7 @@ Mandalapp is my first React app and fun tool to design your own mandala pattern 
 ##### _please have in mind that its still work-in-progress_
 ###### _there are still few bugs to fix and many improvements to come_ 😉
 ##
+![](https://github.com/adriannagryglak/mandalapp/blob/main/src/images/readme-screenshot.PNG)
 ## Features
 - design mandala pattern from various nature-inspired pictures
 - adjust theme for your preference (app takes system settings by default but saves your choice in local storage for later)
